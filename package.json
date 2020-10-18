@@ -1,0 +1,20 @@
+{
+  "name": "systematic-programming-ll1-grammar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgorYevtushenkoUA/Systematic-programming-LL1-grammar.git"
+  },
+  "author": "Igor Yevtusheko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgorYevtushenkoUA/Systematic-programming-LL1-grammar/issues"
+  },
+  "homepage": "https://github.com/IgorYevtushenkoUA/Systematic-programming-LL1-grammar#readme",
+  "type": "module"
+}

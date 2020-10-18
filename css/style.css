@@ -1,0 +1,84 @@
+@font-face {
+  font-family: "Sucrose Bold Two";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/sucrose.woff2") format("woff2");
+}
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: #FF5733;
+  margin-top: -30px;
+}
+.header .exercise-name {
+  font-family: "Sucrose Bold Two";
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.main {
+  width: 100%;
+  height: 500px;
+}
+.main button {
+  background-color: orange;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-family: "Arial Narrow";
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 10px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 4px solid darkorange;
+  border-radius: 10px;
+  outline: none;
+}
+.main button:hover {
+  background-color: darkorange;
+  cursor: pointer;
+}
+.main input {
+  border: 4px solid darkorange;
+  border-radius: 4px;
+  height: 35px;
+  font-size: 20px;
+  outline: none;
+}
+.main .container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 60px;
+}
+.main .container .menu-fields {
+  display: grid;
+  grid-template-columns: 1fr 35%;
+  background-color: orange;
+}
+.main .container .menu-fields .menu-fields-buttons {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+.main .container .menu-buttons {
+  background-color: blueviolet;
+  text-align: center;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  text-align: left;
+}
+
+.footer {
+  margin-top: 20px;
+  height: 80px;
+  color: #000;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
