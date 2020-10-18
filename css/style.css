@@ -64,7 +64,7 @@
   grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 .main .container .menu-buttons {
-  background-color: blueviolet;
+  background-color: orange;
   text-align: center;
 }
 
@@ -89,7 +89,7 @@
   z-index: 1;
   padding-top: 100px;
   left: 0;
-  top: 0;
+  top: -50px;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -105,6 +105,12 @@
   border: 1px solid #888;
   width: 80%;
   /* Could be more or less, depending on screen size */
+}
+.modal-window-instruction .modal-window-content .content-block-words,
+.modal-window-words .modal-window-content .content-block-words {
+  width: 100%;
+  height: 350px;
+  overflow: auto;
 }
 
 /*# sourceMappingURL=style.css.map */

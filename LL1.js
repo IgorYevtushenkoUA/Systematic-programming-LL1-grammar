@@ -1,29 +1,35 @@
 export class LL1 {
-
-    /**
-     * let regexp = /\p{Sc}\d/gu;
-     let  str = `Цены: $2, €1, ¥9`;
-     */
-    /*
-    * alert( "Завтрак в 09:00 в комнате 123:456.".match( /\b\d\d:\d\d\b/ ) ); // 09:00
-    \b((0|1)\d|2[0-3])[-:][0-5]\d\b - вот корректное отображение 24-часового времени)
-    * */
-
-    constructor(text, surname = "Євтушенко") {
+    'use strict'
+    constructor(text = "", surname = "Євтушенко") {
         this._text = text
+        this._surname = surname
     }
 
-    text = "Вочевидь, зараз не всі пригадають цю серпневу дату – вісімнадцяте святкування Дня Незалежності України. Відлік десятилітньої історії Вишиванкового фестивалю розпочався саме тоді, коли сімдесят дев’ять людей, убраних у виши́ванки, утворили вздовж Потьомкінських сходів так званий «живий ланцюг». Амбітні плани організаторів повністю виправдалися: він сягнув-таки берега моря. Простягаючись білою ниткою від п’єдесталу пам’ятника Рішельє, ланцюг із року в рік ставав усе довшим, а разом із цим зростало й усвідомлення Одеси як українського міста. Зростало настільки, що в 2014 році, незважаючи на невпинну зливу, для участі в акції «Вишиванковий ланцюг» вишикувалася півторатисячна черга, утворивши нескінченне живе море виши́ванок." +
-        "Подальші два роки запам’яталися встановленням нових рекордів, адже́ кількість учасників збільшилася вдвічі. До речі, дюк де Рішельє також долучається до цієї події. Четвертий рік поспіль святковий гардероб герцога поповнюється найрізноманітнішими виши́ванками: блакитно-синій і яскраво-червоний, жовтогарячий і ніжно-зелений – ось палітра його ви́шитих візерунків." +
-        "Уже вдеся́те майорить Приморський бульвар синьо-жовтими барвами, і вже вкотре ми збираємось у самому серці Одеси, щоб помилуватися показом автентичного вбрання, написати диктант просто неба, концентруючи  нашу енергію й демонструючи всім як свою єдність, так і свою любов до рідного міста та своєї країни."
+    setText(text){this._text = text}
+    setSurname(surname){this._surname = surname}
 
-    surname = "Євтушенко"
+    _surnameWords  = []
+    _noSurnameWords  = []
+    _numberWords  = []
+    _emailWords = []
+    _phoneNumberWords  = []
+    _notUnderstandWords = []
 
-    surnameWords = []
-    noSurnameWords = []
-    numberWords = []
-    emailWords = []
-    phoneNumberWords = []
+    get getSurnameWords(){return this._surnameWords }
+    get getNoSurnameWords(){return this._noSurnameWords }
+    get getNumberWords(){return this._numberWords }
+    get getEmailWords(){return this._emailWords}
+    get getPhoneNumberWords(){return this._phoneNumberWords }
+    get getNotUnderstandWords(){return this._notUnderstandWords}
+
+    clearDaraArr(){
+        this._surnameWords  = []
+        this._noSurnameWords  = []
+        this._numberWords  = []
+        this._emailWords = []
+        this._phoneNumberWords  = []
+        this._notUnderstandWords = []
+    }
 
     isLetter(ch) {
         return ch.match(/[a-zа-яїєіґ]/i)
@@ -102,35 +108,26 @@ export class LL1 {
     }
 
     sortWordBySpecialClasses() {
-        console.log(this.text)
-        this._text = this.text
-        this._text = this._text.split(" ")
-        for (let i = 0; i < this._text.length; i++) {
-            this._text[i] = this.delLasCharIfNotLetterOrDecimal(this._text[i])
-            let word = this._text[i]
-            if (this.isSurnameWordRegex(word, this.surname)) {
-                this.surnameWords.push(word)
+        this.clearDaraArr()
+        let text = this._text.split(" ")
+        console.log(this._surname)
+        console.log(text)
+        for (let i = 0; i < text.length; i++) {
+            text[i] = this.delLasCharIfNotLetterOrDecimal(text[i])
+            let word = text[i]
+            if (this.isSurnameWordRegex(word, this._surname)) {
+                this._surnameWords.push(word)
             } else if (this.isNotSurnameWordRegex(word)) {
-                this.noSurnameWords.push(word)
+                this._noSurnameWords .push(word)
             } else if (this.isNumberRegex(word)) {
-                this.numberWords.push(word)
+                this._numberWords .push(word)
             } else if (this.isEmailRegex(word)) {
-                this.emailWords.push(word)
+                this._emailWords.push(word)
             } else if (this.isPhoneRegex(word)) {
-                this.phoneNumberWords.push(word)
+                this._phoneNumberWords .push(word)
             } else {
-                // console.log("can not read write to another array ")
+                this._notUnderstandWords.push(word)
             }
         }
-        console.log(this.surnameWords)
-        console.log(this.noSurnameWords)
-        console.log(this.numberWords)
-        console.log(this.phoneNumberWords)
-        console.log(this.emailWords)
-
-        return 1
     }
 }
-
-let igor = new LL1("", "Євтушенко")
-console.log(igor.sortWordBySpecialClasses())
