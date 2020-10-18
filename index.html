@@ -13,70 +13,107 @@
         <h1>LL1 exercise</h1>
     </div>
 </header>
-
 <!--  ~~~~ M A I N ~~~~~~~~~~~~~~-->
 <div class="main">
     <div class="container">
         <div class="menu-fields">
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <textarea name="" id="textarea" cols="30" rows="10"></textarea>
             <div class="menu-fields-buttons">
                 <div class="menu-instruction">
                     <button id="btn-instruction">Instruction</button>
                 </div>
                 <div class="menu-surname">
-                    <input type="text" placeholder="Євтушенко">
+                    <input type="text" placeholder="Євтушенко" id="input-surname-field">
                     <button id="btn-save">Save</button>
                 </div>
-                <div class="menu-random-text" >
+                <div class="menu-random-text">
                     <button id="btn-random-text">Put random UA text</button>
                 </div>
                 <div class="menu-start">
-                    <button id="btn-start">Start</button></div>
+                    <button id="btn-start">Start</button>
+                </div>
             </div>
         </div>
         <div class="menu-buttons">
-            <button class="btn-surname"     id="btn-surname"> surname Words</button>
+            <button class="btn-surname" id="btn-surname"> surname Words</button>
             <button class="btn-not-surname" id="btn-not-surname"> not surname Words</button>
-            <button class="btn-number"      id="btn-number"> numbers</button>
-            <button class="btn-email"       id="btn-email"> emails</button>
-            <button class="btn-phone"       id="btn-phone"> phone numbers</button>
+            <button class="btn-number" id="btn-number"> numbers</button>
+            <button class="btn-email" id="btn-email"> emails</button>
+            <button class="btn-phone" id="btn-phone"> phone numbers(ua)</button>
             <button class="btn-all-not-understand">not understand</button>
         </div>
     </div>
 </div>
+<!--  ~~~~ F O O T E R ~~~~~~~~~~~~~~-->
 <footer class="footer">
     <a href="https://github.com/IgorYevtushenkoUA/Systematic-programming-LL1-grammar">
-        <img class="icon" src="./img/github.png" alt="github page" >
+        <img class="icon" src="./img/github.png" alt="github page">
     </a>
 </footer>
-
-<!--  ~~~~ F O O T E R ~~~~~~~~~~~~~~-->
-<div modal-window>
-    <div class="block-surname">
-        <div class="modal-window-header"></div>
-        <div class="modal-window-main"></div>
+<!--  ~~~~ W I N D O W    W O R D S   C L A S S E S ~~~~~~~~~~~~~~-->
+<div class="modal-window-words" id="modal-window-words">
+    <div class="modal-window-content">
+        <div class="block-surname">
+            <div class="modal-window-header">
+                <pre><h1>S U R N A M E</h1></pre>
+            </div>
+            <div class="modal-window-main"></div>
+        </div>
+        <div class="block-not-surname">
+            <div class="modal-window-header">
+                <pre><h1>N O T   S U R N A M E</h1></pre>
+            </div>
+            <div class="modal-window-main"></div>
+        </div>
+        <div class="block-number">
+            <div class="modal-window-header">
+                <pre><h1>N U M B E R</h1></pre>
+            </div>
+            <div class="modal-window-main"></div>
+        </div>
+        <div class="block-phone">
+            <div class="modal-window-header">
+                <pre><h1>P H O N E</h1></pre>
+            </div>
+            <div class="modal-window-main"></div>
+        </div>
+        <div class="block-email">
+            <div class="modal-window-header">
+                <pre><h1>E M A I L</h1></pre>
+            </div>
+            <div class="modal-window-main"></div>
+        </div>
+        <div class="block-not-understand">
+            <div class="modal-window-header">
+                <pre><h1>N O T   U N D E R S T A N D</h1></pre>
+            </div>
+            <div class="modal-window-main"></div>
+        </div>
     </div>
-    <div class="block-not-surname">
-        <div class="modal-window-header"></div>
-        <div class="modal-window-main"></div>
-    </div>
-    <div class="block-number">
-        <div class="modal-window-header"></div>
-        <div class="modal-window-main"></div>
-    </div>
-    <div class="block-phone">
-        <div class="modal-window-header"></div>
-        <div class="modal-window-main"></div>
-    </div>
-    <div class="block-email">
-        <div class="modal-window-header"></div>
-        <div class="modal-window-main"></div>
-    </div>
-    <div class="block-not-understand">
-        <div class="modal-window-header"></div>
-        <div class="modal-window-main"></div>
+</div>
+<!--  ~~~~ W I N D O W   I N S T R U C T I O N ~~~~~~~~~~~~~~-->
+<div class="modal-window-instruction" id="modal-window-instruction">
+    <div class="modal-window-content">
+        <ul>
+            <li>Якщо ви натиснете старт і не введете прізвище - то автоматично використовуватиметься прізвище
+                Євтушенко
+            </li>
+            <li>Якщо ви натиснете кнопку "Get Random UA text" то вставиться один із 5 вже заготовлених текстів</li>
+            <li>Якщо натиснете на один із - то з'явиться модальне вікно із словами даної категорії</li>
+            <ul>
+                <li>SURNAME WORDS</li>
+                <li>NOT SURNAME WORDS</li>
+                <li>NUMBERS</li>
+                <li>EMAILS</li>
+                <li>PHONE NUMBERS(UA)</li>
+                <li>NOT UNDERSTAND</li>
+            </ul>
+            <li>Якщо натиснете на іконку ГІТХАБ(вона внизу) - вас перекине на мій гітхаб</li>
+        </ul>
     </div>
 </div>
 
+
+<script type="text/javascript" src="./index.js"></script>
 </body>
 </html>

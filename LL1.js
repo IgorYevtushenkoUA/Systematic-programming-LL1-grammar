@@ -1,4 +1,4 @@
-class LL1 {
+export class LL1 {
 
     /**
      * let regexp = /\p{Sc}\d/gu;
